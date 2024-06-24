@@ -1,15 +1,15 @@
 public class Main {
     public static void main(String[] args) {
 
-        PessoaFisica ana = new PessoaFisica("Ana", "Av. Antonio Carlos, 6627", "023.065.376.66", 25, 'f');
-        PessoaFisica vitor = new PessoaFisica("Vitor", "R. Castelo Ajuda, 695", "014.957.656.23", 17, 'm');
+        PessoaFisica junia = new PessoaFisica("Junia", "Av. Antonio Carlos, 662", "010.065.376.20", 20, 'f');
+        PessoaFisica joao = new PessoaFisica("Joao", "R. Planalto, 69", "090.957.646.43", 40, 'm');
 
-        PessoaJuridica neuxCIA = new PessoaJuridica("NeuxCIA", "Av. Contorno, 1152", "555669813", 25, "Shipping");
-        PessoaJuridica anaC = new PessoaJuridica("AnaC", "Av. Fleming, 895", "555669813", 78, "Publishing");
+        PessoaJuridica loja1 = new PessoaJuridica("Brecho", "Av. Antonio Carlos, 112", "555669864", 95, "Shipping");
+        PessoaJuridica loja2 = new PessoaJuridica("Americanas", "Av. Fleming, 111", "555669296", 38, "Retail");
 
-        Conta conta1 = new ContaUniversitaria(1021, vitor, 565, -500, 3500);
-        Conta conta2 = new ContaCorrente(1234, ana, 1000, -300, 1500); //
-        conta1.setDono(anaC);
+        Conta conta1 = new ContaUniversitaria(1021, joao, 565, -500, 3500);
+        Conta conta2 = new ContaCorrente(1234, junia, 1000, -300, 1500); //
+        conta1.setDono(loja2);
 
         System.out.println(conta2);
 
@@ -24,17 +24,17 @@ public class Main {
         System.out.println(conta2);
         conta2.imprimirExtratoConta();
 
-        System.out.println(ana);
-        System.out.println(neuxCIA);
+        System.out.println(junia);
+        System.out.println(loja1);
 
         int media = Operacao.getTotalOperacoes() / Conta.getTotalContas();
         System.out.println("\nMédia de operações por conta aberta: " + media);
 
         System.out.println("conta1 == conta2 ? " + conta1.equals(conta2));
-        System.out.println("ana == vitor ? " + ana.equals(vitor));
-        System.out.println("anaC == neuxCIA ? " + neuxCIA.equals(anaC));
+        System.out.println("junia == joao ? " + junia.equals(joao));
+        System.out.println("loja1 == loja2 ? " + loja1.equals(loja2));
 
-        System.out.println("authenticator: " + neuxCIA.autenticar("555669813"));
+        System.out.println("authenticator: " + loja2.autenticar("555669296"));
 
         conta2.imprimirExtratoTaxas();
     }
